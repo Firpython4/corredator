@@ -30,12 +30,9 @@ function App() {
         </nav>
         <Switch>
           {routes.map((route, index) => {
-            if (route.accessProvider()) {
-              return (<Route path={route.path} render={route.component} key={index} exact={route.isPathExact}/>)
-            }
-            else {
-              return (<Redirect to={defaultPage}/>)
-            }
+            return route.accessProvider() ? (<Route path={route.path} render={route.component} key={index} exact={route.isPathExact}/>)
+            : (<Redirect to={defaultPage}/>)
+
           })}
         </Switch>
       </div>
