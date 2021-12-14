@@ -14,5 +14,3 @@ let object = {
 }
 
 let alteracao = 'arquivo alterado'
-
-// dsssssssssssssss
