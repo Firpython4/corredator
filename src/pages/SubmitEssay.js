@@ -1,5 +1,5 @@
-const SubmitEssay = () => {
-    return <h1>Submit Page</h1>
+export default function SubmitEssay() {
+  return (
+    <h1>Enviar redação</h1>
+  )
 }
-
-export default SubmitEssay;

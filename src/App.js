@@ -1,41 +1,14 @@
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import {Redirect} from "react-router";
-import {routes} from "./routes";
+import { BrowserRouter as Router } from "react-router-dom";
 
-const defaultPage = "/";
-
+import Routes from "./Routes";
+import Navigation from './components/Navigation';
 
 function App() {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to={"/"}>Fazer Login</Link>
-            </li>
-            <li>
-              <Link to="/submit">Enviar Redação</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
-        <Switch>
-          {routes.map((route, index) => {
-            return route.accessProvider() ? (<Route path={route.path} render={route.component} key={index} exact={route.isPathExact}/>)
-            : (<Redirect to={defaultPage}/>)
-
-          })}
-        </Switch>
-      </div>
+      <Navigation />
+      <Routes />
     </Router>
   );
 }
